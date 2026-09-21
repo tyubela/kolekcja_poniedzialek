@@ -35,3 +35,52 @@ int[] wczytajliczbydotabliczy(int ileliczb)
 }
 int[] tablicaWczytana = wczytajliczbydotabliczy(6);
 wypiszTablice(tablicaWczytana);
+
+List<int> WylosowanieLiczBezPowtrozenDoListy(int ileliczb)
+{
+    List<int> listaWylosowanych = new List<int>();
+    //w listach mozna zmieniac rozmiar
+    //w trakcie dzialania programu
+    Random random = new Random();
+    for (int i = 0; i < ileliczb; i++)
+    {
+        int liczba = random.Next(1,10);
+        while(listaWylosowanych.Contains(liczba))
+        {
+            liczba = random.Next(1, 10);
+        }
+        listaWylosowanych.Add(liczba);
+    }
+    return listaWylosowanych;
+}
+void wypiszListe(List<int> listaLiczb)
+{
+    Console.WriteLine();
+    Console.WriteLine("Lista:");
+    for(int i = 0;i < listaLiczb.Count; i++)
+    {
+        Console.Write(listaLiczb[i] + ", ");
+    }
+}
+List<int> wylosowane = WylosowanieLiczBezPowtrozenDoListy(7);
+wypiszListe(wylosowane);
+
+HashSet<int> wylosujLiczbyBezPowtorzenDoZbioru(int ileLiczb)
+{
+    HashSet<int> zbiorlosowych = new Hashset<int>();
+    for (int i = 0; i < ileLiczb; i++)
+    {
+        zbiorlosowych.Add(random.Next(1, 10);
+    }
+    return zbiorlosowych;
+}
+void wypiszZbior(HashSet<int> zbiorLiczb)
+{
+    Console.WriteLine();
+    Console.WriteLine("Zbior:");
+    foreach (int element in zbiorLiczb)
+    {
+        Console.Write(element + ", ");
+    }
+}
+HashSet<int> wylosowanyZbior = wylosujLiczbyBezPowtorzenDoZbioru(7);
