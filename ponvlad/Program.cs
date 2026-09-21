@@ -22,3 +22,16 @@ void wypiszTablice(int[] tablicaDoWypisanie)
 }
 int[] tablicatestowa = wylosujtablice(10);
 wypiszTablice(tablicatestowa);
+
+int[] wczytajliczbydotabliczy(int ileliczb)
+{
+    int[] tablicaZklawiatury = new int[ileliczb];
+    for (int i = 0; i < ileliczb; i++)
+    {
+        Console.WriteLine("Podaj liczbe: " + i);
+        tablicaZklawiatury[i] = int.Parse(Console.ReadLine());
+    }
+    return tablicaZklawiatury;
+}
+int[] tablicaWczytana = wczytajliczbydotabliczy(6);
+wypiszTablice(tablicaWczytana);
